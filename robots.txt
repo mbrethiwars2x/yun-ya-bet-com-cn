@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mbrethiwars2x.github.io/yun-ya-bet-com-cn/sitemap.xml

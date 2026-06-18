@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云押注 · 资料索引与背景观察</title>
+    <style>
+        /* 极简留白 & 杂志专题风格 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            background-color: #fafaf8;
+            color: #1e1e1e;
+            line-height: 1.8;
+            padding: 0 1.5rem;
+        }
+
+        .page-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 0 4rem;
+        }
+
+        /* 首页横幅 — 杂志式跨栏题图 */
+        .hero {
+            margin-bottom: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 4px solid #2d2d2d;
+        }
+
+        .hero-label {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8a8a8a;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #191919;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            max-width: 620px;
+            font-style: italic;
+            border-left: 3px solid #c0b7a8;
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 章节标题 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 2.8rem 0 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0ddd5;
+            letter-spacing: -0.01em;
+            color: #1c1c1c;
+        }
+
+        .section-title small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #7a7a7a;
+            margin-left: 0.75rem;
+            font-style: normal;
+        }
+
+        /* 正文段落 */
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+            text-align: justify;
+            word-spacing: 0.04em;
+        }
+
+        .intro-highlight {
+            font-size: 1.05rem;
+            background: #f3f1ed;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0;
+            margin: 1.8rem 0;
+            border-left: 4px solid #7d6e5d;
+            font-style: normal;
+        }
+
+        /* 卡片式信息块 — 克制、资料感 */
+        .info-card {
+            background: #ffffff;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #efede8;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-card .card-label {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #9a8e7e;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #2f2f2f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #c0b09a;
+            transition: all 0.15s ease;
+        }
+
+        a:hover {
+            color: #000;
+            text-decoration-color: #000;
+        }
+
+        /* FAQ 摘要（杂志短栏） */
+        .faq-mini {
+            margin: 2.5rem 0 1.8rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #dad7cf;
+            border-bottom: 1px solid #dad7cf;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            min-width: 5rem;
+            color: #3d3d3d;
+            font-size: 0.95rem;
+        }
+
+        .faq-a {
+            color: #3a3a3a;
+            font-size: 0.95rem;
+        }
+
+        .faq-a a {
+            font-weight: 400;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 4rem;
+            padding-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #6b6b6b;
+            border-top: 1px solid #e2dfd8;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-note a {
+            color: #4a4a4a;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 1rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.8rem;
+            }
+            .section-title {
+                font-size: 1.25rem;
+            }
+            .info-card {
+                padding: 1.2rem;
+            }
+            .faq-item {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .faq-q {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+        <div class="hero-label">资料专题 · 信息索引</div>
+        <h1>开云押注：一个跨平台的资料整理视角</h1>
+        <div class="subhead">从平台结构、内容呈现到访问路径，以非官方的方式梳理公开信息</div>
+    </div>
+
+    <!-- 背景说明：为什么做索引 -->
+    <p>
+        在互联网信息不断分化的环境中，对特定服务进行客观的资料整理，可以帮助使用者更快速地建立认知框架。本文档围绕「<a href="https://www.yun-ya-bet.com.cn">开云押注</a>」这一名称所指向的线上平台，尝试从页面结构、功能分区与内容组织三个层面进行简要归纳，作为一份独立的背景参考。
+    </p>
+
+    <!-- 三段自然介绍之一：平台结构特征 -->
+    <h2 class="section-title">一、信息架构与导航层级</h2>
+    <p>
+        从公开的页面布局来看，平台采用了较为典型的横向主导航与纵向内容分区相结合的方式。顶部区域通常承载品牌标识与核心入口，中部则依据不同主题设立模块化区块。这种设计在保证视觉统一性的同时，也使得用户能够通过固定路径寻找自己关注的板块。值得注意的是，各分类之间的逻辑关系相对清晰，减少了多层跳转带来的理解成本。
+    </p>
+
+    <!-- 卡片：资料整理笔记 -->
+    <div class="info-card">
+        <div class="card-label">📋 整理笔记</div>
+        <p>
+            在多次浏览与对比中，发现平台对不同终端的适配做了单独处理，移动端与桌面端的菜单结构略有差异，但核心功能的入口位置保持一致。这种一致性对于频繁切换设备的用户而言，降低了重新适应的门槛。
+        </p>
+    </div>
+
+    <!-- 三段自然介绍之二：内容呈现与语言风格 -->
+    <h2 class="section-title">二、内容编辑与信息密度</h2>
+    <p>
+        平台内的文字内容整体偏向简洁，说明性文本多采用短句与分段形式，避免了大段密集叙述。在涉及规则或流程说明的部分，会辅以分点或图标来提升可读性。从资料整理的角度看，这种风格有利于快速抓取关键信息，但也意味着部分背景细节被省略，需要用户自行结合上下文理解。
+    </p>
+    <p>
+        另外，图片与文本的比例在不同的栏目中有所变化。例如在介绍类页面中，图文混合程度较高，而在纯粹的功能页面中，文字占据主导。这种差异性或许反映了内容团队对不同场景的预设：前者侧重展示，后者侧重操作指引。
+    </p>
+
+    <!-- 三段自然介绍之三：场景与访问路径 -->
+    <h2 class="section-title">三、典型访问场景与路径</h2>
+    <p>
+        根据对公开访问记录的粗略观察，用户进入平台的渠道较为多样，既有通过搜索引擎直接定位，也有通过书签或社交推荐进入。一旦进入首页，最常被点击的板块集中在「热门推荐」与「分类浏览」两个区域。这提示平台的内容曝光策略倾向于将高关注度信息前置，从而缩短用户的决策路径。
+    </p>
+    <div class="intro-highlight">
+        ★ 提示：若想直接了解平台当前的主界面与内容组织方式，可访问 <a href="https://www.yun-ya-bet.com.cn">开云押注</a> 进行浏览。本页面仅作静态资料索引，不模拟实际功能。
+    </div>
+
+    <!-- FAQ 摘要 — 克制风格，仅列两个常见问题 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <span class="faq-q">Q1</span>
+            <span class="faq-a">这个索引页面与平台本身是什么关系？<br>—— 本页面是独立的资料整理与背景说明，不隶属于平台运营方，所有描述均基于公开可见内容。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">Q2</span>
+            <span class="faq-a">如何直接到达平台？<br>—— 可通过上方链接访问 <a href="https://www.yun-ya-bet.com.cn">开云押注</a>，链接指向平台首页。</span>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>
+            <span style="font-weight:500;">资料索引 · 开放参考</span> &nbsp;|&nbsp; 本文档基于公开信息整理，更新于2025年。<br>
+            如需了解平台最新结构与内容，建议直接访问 <a href="https://www.yun-ya-bet.com.cn">开云押注</a>。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
